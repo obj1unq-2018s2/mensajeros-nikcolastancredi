@@ -1,0 +1,16 @@
+import destinosPosibles.*
+import mensajeros.*
+import paquete.*
+
+describe "info de paquete "{
+	
+	fixture {
+		paquete.estaPago(true)
+		paquete.destino(matrix)
+		neo.tieneCredito(true)
+	}
+	
+	test "lo va a mandar neo"{
+		assert.that(paquete.puedeSerEntregado(neo))
+	}
+}
